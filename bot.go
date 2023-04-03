@@ -41,6 +41,7 @@ func (fdo *botFuncOption) apply(do *botOption) {
 	fdo.f(do)
 }
 
+// 超时时间
 func TimeoutOpt(timeout time.Duration) BotOption {
 	return &botFuncOption{
 		f: func(do *botOption) {
@@ -49,6 +50,7 @@ func TimeoutOpt(timeout time.Duration) BotOption {
 	}
 }
 
+// @所有人，文本消息和markdown消息支持@所有人
 func AtAllOpt(isAtAll bool) BotOption {
 	return &botFuncOption{
 		f: func(do *botOption) {
@@ -57,6 +59,7 @@ func AtAllOpt(isAtAll bool) BotOption {
 	}
 }
 
+// @手机号，文本消息和markdown消息支持@手机号
 func AtMobilesOpt(atMobiles []string) BotOption {
 	return &botFuncOption{
 		f: func(do *botOption) {
@@ -65,6 +68,7 @@ func AtMobilesOpt(atMobiles []string) BotOption {
 	}
 }
 
+// @用户id，文本消息和markdown消息支持@用户
 func AtUserIdsOpt(atUserIds []string) BotOption {
 	return &botFuncOption{
 		f: func(do *botOption) {
